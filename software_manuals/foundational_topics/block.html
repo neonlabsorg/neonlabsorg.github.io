@@ -3,7 +3,7 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <title>Proof-of-Work · HonKit</title>
+        <title>Block · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 3.6.20">
@@ -56,10 +56,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="proof-of-stake.html" />
+    <link rel="next" href="gas.html" />
     
     
-    <link rel="prev" href="rust-evm.html" />
+    <link rel="prev" href="transaction.html" />
     
 
     </head>
@@ -226,7 +226,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.1.4" data-path="block.html">
+        <li class="chapter active" data-level="1.3.1.4" data-path="block.html">
             
                 <a href="block.html">
             
@@ -265,7 +265,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.1.7" data-path="proof-of-work.html">
+        <li class="chapter " data-level="1.3.1.7" data-path="proof-of-work.html">
             
                 <a href="proof-of-work.html">
             
@@ -415,7 +415,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Proof-of-Work</a>
+        <a href="../.." >Block</a>
     </h1>
 </div>
 
@@ -430,23 +430,24 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="proof-of-work">Proof-of-Work</h1>
-<p><strong>Proof-of-work (PoW)</strong> - is a consensus protocol (proof of work completion) that allows the decentralized Ethereum network to come to consensus, or agree on things like account balances and the order of transactions. This prevents users &quot;double spending&quot; their coins and ensures that the Ethereum chain is incredibly difficult to attack or overwrite.</p>
-<h2 id="how-does-ethereums-pow-work">How does Ethereum&apos;s PoW work?</h2>
-<p>Ethereum transactions are processed into blocks. Each block has a:</p>
+                                <h1 id="block">Block</h1>
+<p>Blocks are batches of transactions with a hash of the previous block in the chain. This links blocks together (in a chain) because hashes are cryptographically derived from the block data. One change in any block in history will invalidate all the following blocks. This feature protects the blocks in a chain from tampering.  </p>
+<p>To preserve the transaction history, blocks are strictly ordered (every new block created contains a reference to its parent block), and transactions within blocks are strictly ordered as well.</p>
+<h2 id="what-is-in-a-block">What is in a block?</h2>
 <ul>
-<li><strong>block difficulty</strong> – for example: <code>3,092,324,262,183,265</code></li>
-<li><strong>mixHash</strong> – for example: <code>0xf83b13079807244144bca881b07a6a09705d9f2f39a3cdf3bee29a665c5ac8bd</code></li>
-<li><strong>nonce</strong> – for example: <code>0x4fb3d26bd3ee432b</code></li>
+<li><strong>Timestamp</strong> – the time when the block was mined.</li>
+<li><strong>Block number</strong> – the length of the blockchain in blocks.</li>
+<li><strong>Difficulty</strong> – the effort required to mine the block.</li>
+<li><strong>mixHash</strong> – a unique identifier for that block.</li>
+<li><strong>A parent hash</strong> – the unique identifier for the block that came before (this is how blocks are linked in a chain).</li>
+<li><strong>Transactions list</strong> – the transactions included in the block.</li>
+<li><strong>State root</strong> – the entire state of the system: account balances, contract storage, contract code and account nonces are inside.</li>
+<li><strong>Nonce</strong> – a hash that, when combined with the mixHash, proves that the block has gone through proof of work.</li>
 </ul>
-<p>This block data is directly related to PoW.</p>
-<p><strong>It needs to be added</strong> </p>
-<h2 id="compared-to-pos">Compared to PoS</h2>
-<p><strong>PoW</strong><br>Cryptocurrency mining requires expensive equipment, special knowledge and labor, since most cryptocurrencies operate on the <strong>PoW</strong> protocol.  </p>
-<p><strong>PoS</strong><br>The number of coins in the user&apos;s account or on lease reflects his mining power. The more coins a user has, the higher his chances of creating the next block and, accordingly, receiving a reward from the transaction fee.</p>
+<h2 id="block-size">Block size</h2>
+<p>Blocks themselves are bounded in size. Each block has a block gas limit which is set by the network and the miners collectively: the total amount of gas expended by all transactions in the block must be less than the block gas limit.</p>
 <blockquote>
-<p><strong>More details</strong><br><a href="https://ethereum.org/en/developers/docs/consensus-mechanisms/pow/" target="_blank">PROOF of WORK</a>
-<a href="https://en.wikipedia.org/wiki/Proof_of_work" target="_blank">Proof of work</a></p>
+<p><strong>More details</strong><br><a href="https://ethereum.org/en/developers/docs/blocks/" target="_blank">Blocks</a></p>
 </blockquote>
 
                                 
@@ -475,12 +476,12 @@
 
             
                 
-                <a href="rust-evm.html" class="navigation navigation-prev " aria-label="Previous page: Rust-EVM">
+                <a href="transaction.html" class="navigation navigation-prev " aria-label="Previous page: Transaction">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="proof-of-stake.html" class="navigation navigation-next " aria-label="Next page: Proof-of-Stake">
+                <a href="gas.html" class="navigation navigation-next " aria-label="Next page: Gas">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -491,7 +492,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Proof-of-Work","level":"1.3.1.7","depth":3,"next":{"title":"Proof-of-Stake","level":"1.3.1.8","depth":3,"path":"software_manuals/foundational_topics/proof-of-stake.md","ref":"software_manuals/foundational_topics/proof-of-stake.md","articles":[]},"previous":{"title":"Rust-EVM","level":"1.3.1.6","depth":3,"path":"software_manuals/foundational_topics/rust-evm.md","ref":"software_manuals/foundational_topics/rust-evm.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"software_manuals/foundational_topics/proof-of-work.md","mtime":"2021-06-03T07:09:36.381Z","type":"markdown"},"gitbook":{"version":"3.6.20","time":"2021-06-04T06:16:34.318Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Block","level":"1.3.1.4","depth":3,"next":{"title":"Gas","level":"1.3.1.5","depth":3,"path":"software_manuals/foundational_topics/gas.md","ref":"software_manuals/foundational_topics/gas.md","articles":[]},"previous":{"title":"Transaction","level":"1.3.1.3","depth":3,"path":"software_manuals/foundational_topics/transaction.md","ref":"software_manuals/foundational_topics/transaction.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"software_manuals/foundational_topics/block.md","mtime":"2021-06-04T06:08:37.847Z","type":"markdown"},"gitbook":{"version":"3.6.20","time":"2021-06-04T06:16:34.318Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
