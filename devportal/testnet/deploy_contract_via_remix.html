@@ -441,7 +441,7 @@
 </ul>
 <p><strong>The network configuration:</strong></p>
 <ul>
-<li>Solana claster is accessed via a proxy.</li>
+<li>Solana cluster is accessed via a proxy.</li>
 <li>Solana works in test mode and the proxy interacts with it through the EVM-loader.</li>
 </ul>
 <h2 id="steps-to-complete">Steps to complete</h2>
@@ -451,14 +451,14 @@
 <p align="center"> Fig. 1 - Connecting to localhost </p>  
 
 <h3 id="create-a-simple-smart-contract-at-remix">Create a simple smart contract at Remix</h3>
-<p><strong>Step 2.</strong> Click on the icon <code>Create New File</code> and type the file name in the field that appears below it. Let it be the smart contract named HelloWorld.sol<br>For now, it is an empty file. To fill it with content, click on the created file name and type the text on the right side of the explorer (or copy your pre-prepared text there)(Fig. 2).  </p>
+<p><strong>Step 2.</strong> Click on the icon <code>Create New File</code> and type the file name in the field that appears below it. Let it be the smart contract named helloWorld.sol<br>For now, it is an empty file. To fill it with content, click on the created file name and type the text on the right side of the explorer (or copy your pre-prepared text there)(Fig. 2).  </p>
 <p align="center"> <img width="700" src="images/remix-2.png"> </p>  
-<p align="center"> Fig. 2 - Loading the HelloWorld smart contract </p>  
+<p align="center"> Fig. 2 - Loading the helloWorld smart contract </p>  
 
 <h3 id="compile-a-smart-contract">Compile a smart contract</h3>
-<p><strong>Step 3.</strong> In the left side menu select the <code>Solidity compiler</code>, it is the third button. The <code>SOLIDITY COMPILER</code> menu will be active.<br>Click on the <code>Compile helloWorld.sol</code> button to compile the loaded smart contract HelloWorld (Fig. 3).  </p>
+<p><strong>Step 3.</strong> In the left side menu select the <code>Solidity compiler</code>, it is the third button. The <code>SOLIDITY COMPILER</code> menu will be active.<br>Click on the <code>Compile helloWorld.sol</code> button to compile the loaded smart contract helloWorld (Fig. 3).  </p>
 <p align="center"> <img width="700" src="images/remix-3.png"> </p>  
-<p align="center"> Fig. 3 - Compiling HelloWorld smart contract </p>  
+<p align="center"> Fig. 3 - Compiling helloWorld smart contract </p>  
 
 <p>If the compilation is successful, a green icon will appear near the third button.<br>You can also get detailed information about the compilation process by clicking the <code>Compilation Details</code> button (Fig. 4).  </p>
 <p align="center"> <img width="700" src="images/remix-4.png"> </p>  
@@ -478,7 +478,7 @@
 <p align="center"> Fig. 7 </p>  
 
 <h3 id="deploy-a-smart-contract-at-solana-testnet">Deploy a smart contract at Solana Testnet</h3>
-<p><strong>Step 5.</strong> In the left side menu select the <code>Deploy &amp; run transactions</code>, it is the fourth button. The <code>DEPLOY &amp; RUN TRANSACTIONS</code> menu will be active.<br>In our case there is only one smart contract to deploy. Therefore, it is automatically selected from dropdown and Remix will automatically generate a transaction.<br>The <code>Account</code> field will display an account address and required number of coins to deploy the smart contract. This data is taken from MetaMask.<br>Click the <code>Deploy</code> button (Fig. 8).  </p>
+<p><strong>Step 5.</strong> In the left side menu select the <code>Deploy &amp; run transactions</code>, it is the fourth button. The <code>DEPLOY &amp; RUN TRANSACTIONS</code> menu will be active.<br>In our case there is only one smart contract to deploy. Therefore, it is automatically selected from dropdown and Remix will automatically generate a transaction.<br>The <code>Account</code> field will display the amount of the wallet account. This data is taken from MetaMask.<br>Click the <code>Deploy</code> button (Fig. 8).  </p>
 <p align="center"> <img width="700" src="images/remix-8.png"> </p>  
 <p align="center"> Fig. 8 - Deploying the smart contract </p>  
 
@@ -487,7 +487,7 @@
 <p align="center"> Fig. 9 - MetaMask notification </p>  
 
 <p><strong>Step 7.</strong> Once the transaction is confirmed, you can check it by the appeared messages at bottom right (Fig. 10).  </p>
-<p align="center"> <img width="300" src="images/remix-10.png"> </p>  
+<p align="center"> <img width="600" src="images/remix-10.png"> </p>  
 <p align="center"> Fig. 10 </p>  
 
 <p>After successfully deploying the smart contract, you will see a message containing the name and address of the smart contract where it was uploaded (Fig. 11).  </p>
@@ -498,10 +498,14 @@
 <p align="center"> <img width="700" src="images/remix-12.png"> </p>  
 <p align="center"> Fig. 12 - The final view of the Remix panel </p>  
 
-<p>Our congratulations! Now you can call methods of the HelloWorld smart contract deployed on the Solana Testnet (Fig. 13).  </p>
+<p>Our congratulations! Now you can call methods of the helloWorld smart contract deployed on the Solana Testnet (Fig. 13 shows the result of your smart contract - the text string &quot;Hello World!&quot;).  </p>
 <p align="center"> <img width="300" src="images/remix-13.png"> </p>  
 <p align="center"> Fig. 13 - Calling the smart contract methods </p>  
 
+<hr>
+<blockquote>
+<p><strong>Usefull liks</strong><br><a href="https://ethereum.org/en/developers/tutorials/deploying-your-first-smart-contract/" target="_blank">https://ethereum.org/en/developers/tutorials/deploying-your-first-smart-contract/</a></p>
+</blockquote>
 
                                 
                                 </section>
@@ -545,7 +549,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Deploying a Contract via Remix","level":"1.2.3","depth":2,"next":{"title":"SOFTWARE MANUALS","level":"1.3","depth":1,"path":"software_manuals/software_manuals.md","ref":"software_manuals/software_manuals.md","articles":[{"title":"Foundational Topics","level":"1.3.1","depth":2,"path":"software_manuals/foundational_topics.md","ref":"software_manuals/foundational_topics.md","articles":[{"title":"WEB3","level":"1.3.1.1","depth":3,"path":"software_manuals/foundational_topics/web3.md","ref":"software_manuals/foundational_topics/web3.md","articles":[]},{"title":"Account","level":"1.3.1.2","depth":3,"path":"software_manuals/foundational_topics/account.md","ref":"software_manuals/foundational_topics/account.md","articles":[]},{"title":"Transaction","level":"1.3.1.3","depth":3,"path":"software_manuals/foundational_topics/transaction.md","ref":"software_manuals/foundational_topics/transaction.md","articles":[]},{"title":"Block","level":"1.3.1.4","depth":3,"path":"software_manuals/foundational_topics/block.md","ref":"software_manuals/foundational_topics/block.md","articles":[]},{"title":"Gas","level":"1.3.1.5","depth":3,"path":"software_manuals/foundational_topics/gas.md","ref":"software_manuals/foundational_topics/gas.md","articles":[]},{"title":"Rust-EVM","level":"1.3.1.6","depth":3,"path":"software_manuals/foundational_topics/rust-evm.md","ref":"software_manuals/foundational_topics/rust-evm.md","articles":[]},{"title":"Proof-of-Work","level":"1.3.1.7","depth":3,"path":"software_manuals/foundational_topics/proof-of-work.md","ref":"software_manuals/foundational_topics/proof-of-work.md","articles":[]},{"title":"Proof-of-Stake","level":"1.3.1.8","depth":3,"path":"software_manuals/foundational_topics/proof-of-stake.md","ref":"software_manuals/foundational_topics/proof-of-stake.md","articles":[]}]},{"title":"How To Guides","level":"1.3.2","depth":2,"path":"software_manuals/how_to_guides.md","ref":"software_manuals/how_to_guides.md","articles":[{"title":"How To Create An Ethereum Account","level":"1.3.2.1","depth":3,"path":"software_manuals/how_to_guides/create_account.md","ref":"software_manuals/how_to_guides/create_account.md","articles":[]},{"title":"How To Get Ethereum Account Information","level":"1.3.2.2","depth":3,"path":"software_manuals/how_to_guides/get_account_information.md","ref":"software_manuals/how_to_guides/get_account_information.md","articles":[]},{"title":"How To Deploy An Ethereum Contract","level":"1.3.2.3","depth":3,"path":"software_manuals/how_to_guides/deploy_contract.md","ref":"software_manuals/how_to_guides/deploy_contract.md","articles":[]},{"title":"How To Get Transaction Information","level":"1.3.2.4","depth":3,"path":"software_manuals/how_to_guides/get_transaction_information.md","ref":"software_manuals/how_to_guides/get_transaction_information.md","articles":[]}]}]},"previous":{"title":"Connection to Solana Testnet via a Proxy Server","level":"1.2.2","depth":2,"path":"devportal/testnet/connect_to_solana_via_proxy.md","ref":"devportal/testnet/connect_to_solana_via_proxy.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"devportal/testnet/deploy_contract_via_remix.md","mtime":"2021-06-03T10:31:09.919Z","type":"markdown"},"gitbook":{"version":"3.6.20","time":"2021-06-04T06:16:34.318Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Deploying a Contract via Remix","level":"1.2.3","depth":2,"next":{"title":"SOFTWARE MANUALS","level":"1.3","depth":1,"path":"software_manuals/software_manuals.md","ref":"software_manuals/software_manuals.md","articles":[{"title":"Foundational Topics","level":"1.3.1","depth":2,"path":"software_manuals/foundational_topics.md","ref":"software_manuals/foundational_topics.md","articles":[{"title":"WEB3","level":"1.3.1.1","depth":3,"path":"software_manuals/foundational_topics/web3.md","ref":"software_manuals/foundational_topics/web3.md","articles":[]},{"title":"Account","level":"1.3.1.2","depth":3,"path":"software_manuals/foundational_topics/account.md","ref":"software_manuals/foundational_topics/account.md","articles":[]},{"title":"Transaction","level":"1.3.1.3","depth":3,"path":"software_manuals/foundational_topics/transaction.md","ref":"software_manuals/foundational_topics/transaction.md","articles":[]},{"title":"Block","level":"1.3.1.4","depth":3,"path":"software_manuals/foundational_topics/block.md","ref":"software_manuals/foundational_topics/block.md","articles":[]},{"title":"Gas","level":"1.3.1.5","depth":3,"path":"software_manuals/foundational_topics/gas.md","ref":"software_manuals/foundational_topics/gas.md","articles":[]},{"title":"Rust-EVM","level":"1.3.1.6","depth":3,"path":"software_manuals/foundational_topics/rust-evm.md","ref":"software_manuals/foundational_topics/rust-evm.md","articles":[]},{"title":"Proof-of-Work","level":"1.3.1.7","depth":3,"path":"software_manuals/foundational_topics/proof-of-work.md","ref":"software_manuals/foundational_topics/proof-of-work.md","articles":[]},{"title":"Proof-of-Stake","level":"1.3.1.8","depth":3,"path":"software_manuals/foundational_topics/proof-of-stake.md","ref":"software_manuals/foundational_topics/proof-of-stake.md","articles":[]}]},{"title":"How To Guides","level":"1.3.2","depth":2,"path":"software_manuals/how_to_guides.md","ref":"software_manuals/how_to_guides.md","articles":[{"title":"How To Create An Ethereum Account","level":"1.3.2.1","depth":3,"path":"software_manuals/how_to_guides/create_account.md","ref":"software_manuals/how_to_guides/create_account.md","articles":[]},{"title":"How To Get Ethereum Account Information","level":"1.3.2.2","depth":3,"path":"software_manuals/how_to_guides/get_account_information.md","ref":"software_manuals/how_to_guides/get_account_information.md","articles":[]},{"title":"How To Deploy An Ethereum Contract","level":"1.3.2.3","depth":3,"path":"software_manuals/how_to_guides/deploy_contract.md","ref":"software_manuals/how_to_guides/deploy_contract.md","articles":[]},{"title":"How To Get Transaction Information","level":"1.3.2.4","depth":3,"path":"software_manuals/how_to_guides/get_transaction_information.md","ref":"software_manuals/how_to_guides/get_transaction_information.md","articles":[]}]}]},"previous":{"title":"Connection to Solana Testnet via a Proxy Server","level":"1.2.2","depth":2,"path":"devportal/testnet/connect_to_solana_via_proxy.md","ref":"devportal/testnet/connect_to_solana_via_proxy.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"devportal/testnet/deploy_contract_via_remix.md","mtime":"2021-06-07T09:09:38.944Z","type":"markdown"},"gitbook":{"version":"3.6.20","time":"2021-06-07T09:15:40.892Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -597,10 +601,6 @@
     </script>
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
-    
-        
-        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
     
         
         <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
