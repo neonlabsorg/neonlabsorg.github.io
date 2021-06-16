@@ -3,7 +3,7 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <title>Connection to Solana Testnet via a Proxy Server · HonKit</title>
+        <title>Connecting to Solana Testnet via a Proxy Server · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 3.6.20">
@@ -133,7 +133,7 @@
                 <a href="connect_to_solana_via_proxy.html">
             
                     
-                    Connection to Solana Testnet via a Proxy Server
+                    Connecting to Solana Testnet via a Proxy Server
             
                 </a>
             
@@ -363,7 +363,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Connection to Solana Testnet via a Proxy Server</a>
+        <a href="../.." >Connecting to Solana Testnet via a Proxy Server</a>
     </h1>
 </div>
 
@@ -378,17 +378,17 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="connection-to-solana-testnet-via-a-proxy-server">Connection to Solana Testnet via a Proxy Server</h1>
+                                <h1 id="connecting-to-solana-testnet-via-a-proxy-server">Connecting to Solana Testnet via a Proxy Server</h1>
 <h2 id="goal">Goal</h2>
-<p>Connect to Solana evm-loader through a proxy server and run Solana Testnet.  </p>
-<p>Depending on the tasks to be solved, as well as on a location of the proxy and Solana, you can use one of 3 options for configuring the network:</p>
+<p>To connect to Solana EVM-loader through a proxy server and run Solana Testnet.  </p>
+<p>Depending on the tasks to be solved, as well as on the location of the proxy and Solana, you can use one of 3 options for configuring the network:</p>
 <ul>
 <li><em>Option 1:</em> The proxy is hosted on a remote virtual server; Solana Testnet is used.</li>
 <li><em>Option 2:</em> The proxy is hosted locally; Solana Testnet is used.</li>
-<li><em>Option 3:</em> Both the proxy and Solana are hosted locally (debug mode, allows you to configure your own node locally).</li>
+<li><em>Option 3:</em> Both the proxy and Solana are hosted locally (debug mode, which allows you to configure your node locally).</li>
 </ul>
-<p>Solana Testnet is an alternative cryptocurrency chain exclusively for developers. It allows developers to run their own node in a test blockchain and experiment without losing real currency.<br>The mainnet and testnet coins are incompatible with each other. Testnet coins have no value and developers cannot treansfer mainnet coins to testnet. Likewise, they cannot transfer testnet coins to mainnet.</p>
-<h2 id="requirements-to-your-device">Requirements to your device</h2>
+<p>Solana Testnet is an alternative cryptocurrency chain exclusively for developers. It allows developers to run their node in a test blockchain and experiment without losing real currency.<br>The mainnet and testnet coins are incompatible with each other. Testnet coins have no value and developers cannot treansfer mainnet coins to testnet. Likewise, they cannot transfer testnet coins to mainnet.</p>
+<h2 id="requirements-for-your-device">Requirements for your device</h2>
 <p>The MetaMask wallet must be installed on your device.  </p>
 <blockquote>
 <p>Although this tutorial uses the <em>Ubuntu</em> platform, the instructions provided can be applied to other Linux platforms.  </p>
@@ -400,7 +400,7 @@
 <li>Solana works in test mode and the proxy interacts with it through the EVM-loader.</li>
 </ul>
 <p><strong>Step 1.</strong> Open your MetaMask wallet and in the upper-right corner, click the red apple view element.<br>Click <code>Create Account</code> in the dropdown menu and add one more account to interact with the network configured.  </p>
-<p><strong>Step 2.</strong> Open your wallet under the new account and click <code>Settings</code> in the dropdown menu.<br>The window with settings menu for selecting a network should open.  </p>
+<p><strong>Step 2.</strong> Open your wallet under the new account and click <code>Settings</code> in the dropdown menu.<br>The window with a settings menu for selecting a network should open.  </p>
 <p><strong>Step 3.</strong> Add the Network choosed and click <code>Add Network</code> in the top-right corner.
  In the window opened fill in the fields (an example of filling them is below):  </p>
 <ul>
@@ -431,19 +431,19 @@ Cannot connect to the Docker daemon at &lt;docker.sock&gt;. Is the docker daemon
 <li><code>--rm</code> - deleting a container when the command is completed.</li>
 <li><code>-d</code> - detach a terminal.</li>
 <li><code>--network host</code> - use host network.</li>
-<li><code>--name proxy</code> - specifies the proxy name (<code>cybercoredev/proxy:latest</code> - this is the specific image name. The EVM-loader address is registered inside <code>cybercoredev/proxy:latest</code>, so the proxy knows which EVM-loader is running in Solana Testnet).</li>
+<li><code>--name proxy</code> - this specifies the proxy name (<code>cybercoredev/proxy:latest</code> - this is the specific image name. The EVM-loader address is registered inside <code>cybercoredev/proxy:latest</code>, so the proxy knows which EVM-loader is running in Solana Testnet).</li>
 </ul>
 <p>As soon as this command is completed, the proxy will be available at <code>http://localhost:9090/solana</code>. This address is set by default. To set a different address, you need to specify the variable <code>-e SOLANA_URL=&apos;http://localhost:&lt;proxy address&gt;&apos;</code> on the command line.</p>
 <h2 id="option-3-running-solana-via-a-poxy-when-both-are-hosted-locally">Option 3: Running Solana via a poxy when both are hosted locally</h2>
 <p><strong>The network configuration:</strong></p>
 <ul>
-<li>Both Solana cluster and the proxy hosted locally.</li>
+<li>Both the Solana cluster and the proxy are hosted locally.</li>
 <li>The proxy interacts with Solana through the EVM-loader.</li>
 </ul>
 <pre><code class="lang-sh">$ sudo docker compose app &lt;filename&gt;
 </code></pre>
 <blockquote>
-<p> new command will be specified !!!!!!</p>
+<p> The new command will be specified !!!!!!</p>
 </blockquote>
 <p>As soon as this command is completed, the proxy will be available at <code>http://localhost:9090/solana</code>, Solana will be available at <code>http://localhost:8899</code>.</p>
 
@@ -489,7 +489,7 @@ Cannot connect to the Docker daemon at &lt;docker.sock&gt;. Is the docker daemon
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Connection to Solana Testnet via a Proxy Server","level":"1.2.2","depth":2,"next":{"title":"Deploying a Contract via Remix","level":"1.2.3","depth":2,"path":"devportal/testnet/deploy_contract_via_remix.md","ref":"devportal/testnet/deploy_contract_via_remix.md","articles":[]},"previous":{"title":"Installing and Setting up MetaMask","level":"1.2.1","depth":2,"path":"devportal/metamask_setup.md","ref":"devportal/metamask_setup.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"devportal/testnet/connect_to_solana_via_proxy.md","mtime":"2021-06-06T13:21:59.080Z","type":"markdown"},"gitbook":{"version":"3.6.20","time":"2021-06-07T10:52:05.434Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Connecting to Solana Testnet via a Proxy Server","level":"1.2.2","depth":2,"next":{"title":"Deploying a Contract via Remix","level":"1.2.3","depth":2,"path":"devportal/testnet/deploy_contract_via_remix.md","ref":"devportal/testnet/deploy_contract_via_remix.md","articles":[]},"previous":{"title":"Installing and Setting up MetaMask","level":"1.2.1","depth":2,"path":"devportal/metamask_setup.md","ref":"devportal/metamask_setup.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"devportal/testnet/connect_to_solana_via_proxy.md","mtime":"2021-06-16T08:40:01.122Z","type":"markdown"},"gitbook":{"version":"3.6.20","time":"2021-06-16T10:32:04.742Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
