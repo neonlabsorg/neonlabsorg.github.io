@@ -56,7 +56,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="metamask_setup.html" />
+    <link rel="next" href="neon_evm_arch.html" />
     
     
     <link rel="prev" href="devportal.html" />
@@ -128,7 +128,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="metamask_setup.html">
+        <li class="chapter " data-level="1.2.2" data-path="neon_evm_arch.html">
+            
+                <a href="neon_evm_arch.html">
+            
+                    
+                    Overview of the Neon EVM architecture
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="metamask_setup.html">
             
                 <a href="metamask_setup.html">
             
@@ -141,7 +154,21 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3" data-path="testnet/connect_to_solana_via_proxy.html">
+        <li class="chapter " data-level="1.2.4" data-path="testnet.html">
+            
+                <a href="testnet.html">
+            
+                    
+                    Testnet
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="testnet/connect_to_solana_via_proxy.html">
             
                 <a href="testnet/connect_to_solana_via_proxy.html">
             
@@ -154,7 +181,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4" data-path="testnet/deploy_contract_via_remix.html">
+        <li class="chapter " data-level="1.2.4.2" data-path="testnet/deploy_contract_via_remix.html">
             
                 <a href="testnet/deploy_contract_via_remix.html">
             
@@ -164,6 +191,11 @@
                 </a>
             
 
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -417,8 +449,8 @@
 <td style="text-align:left">decentralized application(s)  </td>
 </tr>
 <tr>
-<td style="text-align:left"><em>E-trx</em></td>
-<td style="text-align:left">a transaction formed according to the Ethereum network rules  </td>
+<td style="text-align:left"><em>N-trx</em></td>
+<td style="text-align:left">a Neon transaction formed according to the Ethereum network rules. It is executed inside Neon EVM  </td>
 </tr>
 <tr>
 <td style="text-align:left"><em>EVM</em></td>
@@ -471,8 +503,8 @@
 <p><strong>Berkley Packed Filter</strong><br>The BPF virtual machine is installed in Solana. The BPF allows developers to embed other virtual machines inside Solana.  </p>
 <p>Using BPF capabilities, the EVM virtual machine was loaded inside Solana. That is, a contract called Neon EVM was created in Solana, inside of which the EVM was loaded.  </p>
 <p>Because Solana has a contract update mechanism, the Neon EVM contract can also be updated independently of the update of the Solana node itself. This allows developers to update EVM versions for their various needs without updating all the blockchain nodes.  </p>
-<p><strong>Neon Web3 Proxy</strong><br>A user is allowed to form transactions under an Ethereum account and sign them with a public key generated in Ethereum. Formed transactions according to Ethereum rules are sent to the input of the Proxy component. This component converts <em>E-trxs</em> into transactions under the Solana rules.  </p>
-<p>An <em>E-trx</em> size can exceed the maximum <em>S-trx</em> size. Also, the amount of resources that a <em>S-trx</em> can spend is limited. Converting a transaction in a one-to-one format is difficult due to the possible lack of resources. Therefore, it was decided to generate multiple <em>S-trxs</em> for one <em>E-trx</em>.
+<p><strong>Neon Web3 Proxy</strong><br>A user is allowed to form transactions under an Ethereum account and sign them with a public key generated in Ethereum. Formed transactions according to Ethereum rules are sent to the input of the Proxy component. This component converts <em>N-trxs</em> into transactions under the Solana rules.  </p>
+<p>An <em>N-trx</em> size can exceed the maximum <em>S-trx</em> size. Also, the amount of resources that a <em>S-trx</em> can spend is limited. Converting a transaction in a one-to-one format is difficult due to the possible lack of resources. Therefore, it was decided to generate multiple <em>S-trxs</em> for one <em>N-trx</em>.
 Each generated transaction is signed with a Proxy key. Proxy sends the generated batch of transactions to Solana.  </p>
 <p><strong>Web3 API</strong><br>Proxy provides the full Web3 API to interact with external clients. In Ethereum, some contracts work at the blockchain level, and there is also an API that is supported by an Ethereum node. Clients that are created for Ethereum contracts support standard interfaces. For a client (i.e. Metamask, Remix) to work in a web browser, it must work via the Web3 API. That is, the written client parts do not need to be rewritten again. Clients will work on a different blockchain if they are provided with the same interface. To do this, you just need to change the address where these clients need to go. Ethereum contracts and clients do not need to be rewritten to work in Solana, you just need to register the Proxy address. Any client can run a Proxy to deploy a contract inside Solana. Clients will work as they did before.</p>
 <p><strong>Neon EVM</strong><br>Solana runs BPF, inside of which Neon EVM also runs. Neon EVM is a Solana contract, so it recognizes the transaction format from the received batch. Neon EVM extracts data from each transaction and thus can retrieve all the original user information placed in the transaction.  </p>
@@ -494,13 +526,13 @@ Each generated transaction is signed with a Proxy key. Proxy sends the generated
 <p align="center"> Fig. 2 </p>  
 
 <p>To perform this transaction, the Neon EVM emulator makes a request to Solana to get state data.
-Proxy requests a blockchain state from Solana and makes a test launch of <em>E-trx</em> using the Solana state. On the basis of the data received, Proxy forms the new transaction according to Solana&apos;s rules. The transaction generated for Solana will contain the packaged <em>E-trx</em>, as well as the account data required to complete the transaction, including: </p>
+Proxy requests a blockchain state from Solana and makes a test launch of <em>N-trx</em> using the Solana state. On the basis of the data received, Proxy forms the new transaction according to Solana&apos;s rules. The transaction generated for Solana will contain the packaged <em>N-trx</em>, as well as the account data required to complete the transaction, including: </p>
 <ul>
 <li>payer - the account that pays for the transaction;</li>
 <li>other accounts involved in the execution of this transaction.  </li>
 </ul>
 <p>Next, the transaction is forwarded inside Solana, where participants of the transaction are determined according to the account data. The data added includes details about persons who initiate and take part in processing the transaction. The operator of Proxy is specified as a <em>payer</em>. The <em>payer</em> will be rewarded for completing the transaction.  </p>
-<p>Next, the transaction is transferred to Neon EVM, where its signature is checked according to Ethereum rules. If the signature is valid, the transaction will be transferred to the Solana blockchain for execution. Since testing of <em>E-trx</em> is made, it is possible to provide Solana with all the necessary information to parallelize the execution of the <em>E-trx</em>.</p>
+<p>Next, the transaction is transferred to Neon EVM, where its signature is checked according to Ethereum rules. If the signature is valid, the transaction will be transferred to the Solana blockchain for execution. Since testing of <em>N-trx</em> is made, it is possible to provide Solana with all the necessary information to parallelize the execution of the <em>N-trx</em>.</p>
 <h2 id="conclusion">Conclusion</h2>
 <p>The developed solution gives users the following features:</p>
 <ul>
@@ -512,6 +544,7 @@ Proxy requests a blockchain state from Solana and makes a test launch of <em>E-t
 <li>create and deploy their contracts on the Solana network.</li>
 </ul>
 </li>
+<li>Unlike Ethereum, the Neon EVM can be updated at any time. This means that new functionality can be added at any time and code updates can take place simply by uploading them as a new smart contract.</li>
 </ul>
 
                                 
@@ -545,7 +578,7 @@ Proxy requests a blockchain state from Solana and makes a test launch of <em>E-t
                 </a>
                 
                 
-                <a href="metamask_setup.html" class="navigation navigation-next " aria-label="Next page: Installing and Setting up MetaMask">
+                <a href="neon_evm_arch.html" class="navigation navigation-next " aria-label="Next page: Overview of the Neon EVM architecture">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -556,7 +589,7 @@ Proxy requests a blockchain state from Solana and makes a test launch of <em>E-t
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"The Ethereum and Solana capabilities in a single solution","level":"1.2.1","depth":2,"next":{"title":"Installing and Setting up MetaMask","level":"1.2.2","depth":2,"path":"devportal/metamask_setup.md","ref":"devportal/metamask_setup.md","articles":[]},"previous":{"title":"DEVPORTAL","level":"1.2","depth":1,"path":"devportal/devportal.md","ref":"devportal/devportal.md","articles":[{"title":"The Ethereum and Solana capabilities in a single solution","level":"1.2.1","depth":2,"path":"devportal/eth_sol_solution.md","ref":"devportal/eth_sol_solution.md","articles":[]},{"title":"Installing and Setting up MetaMask","level":"1.2.2","depth":2,"path":"devportal/metamask_setup.md","ref":"devportal/metamask_setup.md","articles":[]},{"title":"Connecting to Solana Testnet via a Proxy Server","level":"1.2.3","depth":2,"path":"devportal/testnet/connect_to_solana_via_proxy.md","ref":"devportal/testnet/connect_to_solana_via_proxy.md","articles":[]},{"title":"Deploying a Contract via Remix","level":"1.2.4","depth":2,"path":"devportal/testnet/deploy_contract_via_remix.md","ref":"devportal/testnet/deploy_contract_via_remix.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"devportal/eth_sol_solution.md","mtime":"2021-06-22T03:32:48.666Z","type":"markdown"},"gitbook":{"version":"3.6.20","time":"2021-06-22T03:35:33.063Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"The Ethereum and Solana capabilities in a single solution","level":"1.2.1","depth":2,"next":{"title":"Overview of the Neon EVM architecture","level":"1.2.2","depth":2,"path":"devportal/neon_evm_arch.md","ref":"devportal/neon_evm_arch.md","articles":[]},"previous":{"title":"DEVPORTAL","level":"1.2","depth":1,"path":"devportal/devportal.md","ref":"devportal/devportal.md","articles":[{"title":"The Ethereum and Solana capabilities in a single solution","level":"1.2.1","depth":2,"path":"devportal/eth_sol_solution.md","ref":"devportal/eth_sol_solution.md","articles":[]},{"title":"Overview of the Neon EVM architecture","level":"1.2.2","depth":2,"path":"devportal/neon_evm_arch.md","ref":"devportal/neon_evm_arch.md","articles":[]},{"title":"Installing and Setting up MetaMask","level":"1.2.3","depth":2,"path":"devportal/metamask_setup.md","ref":"devportal/metamask_setup.md","articles":[]},{"title":"Testnet","level":"1.2.4","depth":2,"path":"devportal/testnet.md","ref":"devportal/testnet.md","articles":[{"title":"Connecting to Solana Testnet via a Proxy Server","level":"1.2.4.1","depth":3,"path":"devportal/testnet/connect_to_solana_via_proxy.md","ref":"devportal/testnet/connect_to_solana_via_proxy.md","articles":[]},{"title":"Deploying a Contract via Remix","level":"1.2.4.2","depth":3,"path":"devportal/testnet/deploy_contract_via_remix.md","ref":"devportal/testnet/deploy_contract_via_remix.md","articles":[]}]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"devportal/eth_sol_solution.md","mtime":"2021-07-01T10:02:03.753Z","type":"markdown"},"gitbook":{"version":"3.6.20","time":"2021-07-06T11:49:55.570Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -608,10 +641,6 @@ Proxy requests a blockchain state from Solana and makes a test launch of <em>E-t
     </script>
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
