@@ -6,7 +6,7 @@
         <title>The Ethereum and Solana capabilities in a single solution</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        
+        <meta name="generator" content="HonKit 3.6.20">
         
         
         
@@ -141,7 +141,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3" data-path="metamask_setup.html">
+        <li class="chapter " data-level="1.2.3" data-path="value_token.html">
+            
+                <a href="value_token.html">
+            
+                    
+                    Transaction Value Token
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="metamask_setup.html">
             
                 <a href="metamask_setup.html">
             
@@ -154,7 +167,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4" data-path="testnet.html">
+        <li class="chapter " data-level="1.2.5" data-path="testnet.html">
             
                 <a href="testnet.html">
             
@@ -168,7 +181,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.4.1" data-path="testnet/connect_to_solana_via_proxy.html">
+        <li class="chapter " data-level="1.2.5.1" data-path="testnet/connect_to_solana_via_proxy.html">
             
                 <a href="testnet/connect_to_solana_via_proxy.html">
             
@@ -181,7 +194,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4.2" data-path="testnet/deploy_contract_via_remix.html">
+        <li class="chapter " data-level="1.2.5.2" data-path="testnet/deploy_contract_via_remix.html">
             
                 <a href="testnet/deploy_contract_via_remix.html">
             
@@ -384,7 +397,9 @@
     <li class="divider"></li>
 
     <li>
-        
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
     </li>
 </ul>
 
@@ -426,44 +441,15 @@
 <p><em>This section describes a unique solution that allows Ethereum users to use the key features of Solana and vice versa - Solana users to use the key features of Ethereum.</em></p>
 </blockquote>
 <h3 id="terminology-used">Terminology used</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Term</th>
-<th style="text-align:left">Meaning  </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><em>BPF</em></td>
-<td style="text-align:left">the Berkley Packed Filter virtual machine  </td>
-</tr>
-<tr>
-<td style="text-align:left"><em>Contract</em></td>
-<td style="text-align:left">a smart contract  </td>
-</tr>
-<tr>
-<td style="text-align:left"><em>dApp(s)</em></td>
-<td style="text-align:left">decentralized application(s)  </td>
-</tr>
-<tr>
-<td style="text-align:left"><em>N-trx</em></td>
-<td style="text-align:left">a Neon transaction formed according to the Ethereum network rules. It is executed inside Neon EVM  </td>
-</tr>
-<tr>
-<td style="text-align:left"><em>EVM</em></td>
-<td style="text-align:left">the Ethereum Virtual Machine  </td>
-</tr>
-<tr>
-<td style="text-align:left"><em>Proxy</em></td>
-<td style="text-align:left">the Neon Web3 Proxy  </td>
-</tr>
-<tr>
-<td style="text-align:left"><em>S-trx</em></td>
-<td style="text-align:left">a transaction formed according to the Solana network rules  </td>
-</tr>
-</tbody>
-</table>
+<ul>
+<li><em>BPF</em> - the Berkley Packed Filter virtual machine</li>
+<li><em>Contract</em> - a smart contract</li>
+<li><em>dApp(s)</em> - decentralized application(s)</li>
+<li><em>N-trx</em> - a Neon transaction formed according to the Ethereum network rules. It is executed inside Neon EVM</li>
+<li><em>EVM</em> - the Ethereum Virtual Machine</li>
+<li><em>Proxy</em> - the Neon Web3 Proxy</li>
+<li><em>S-trx</em> - a transaction formed according to the Solana network rules</li>
+</ul>
 <h2 id="the-key-ethereum-capabilities">The key Ethereum capabilities</h2>
 <p>Ethereum’s core innovation, EVM is a Turing complete software that runs on the Ethereum network. EVM makes the process of creating blockchain applications much easier and efficient and enables developers to build and deploy dApps. Contracts are treated as autonomous scripts or stateful dApps that are stored in the Ethereum blockchain for later execution by the EVM.  </p>
 <p>Ethereum has a large number of developer tools (such as <em>Metamask</em>, <em>Remix</em>, <em>Truffle</em>, and others) available in its ecosystem. The toolkit allows users to write dApps in Solidity that is most convenient for the development of contracts.  </p>
@@ -587,7 +573,7 @@ Proxy requests a blockchain state from Solana and makes a test launch of <em>N-t
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"The Ethereum and Solana capabilities in a single solution","level":"1.2.1","depth":2,"next":{"title":"Overview of the Neon EVM architecture","level":"1.2.2","depth":2,"path":"devportal/neon_evm_arch.md","ref":"devportal/neon_evm_arch.md","articles":[]},"previous":{"title":"DEVPORTAL","level":"1.2","depth":1,"path":"devportal/devportal.md","ref":"devportal/devportal.md","articles":[{"title":"The Ethereum and Solana capabilities in a single solution","level":"1.2.1","depth":2,"path":"devportal/eth_sol_solution.md","ref":"devportal/eth_sol_solution.md","articles":[]},{"title":"Overview of the Neon EVM architecture","level":"1.2.2","depth":2,"path":"devportal/neon_evm_arch.md","ref":"devportal/neon_evm_arch.md","articles":[]},{"title":"Installing and Setting up MetaMask","level":"1.2.3","depth":2,"path":"devportal/metamask_setup.md","ref":"devportal/metamask_setup.md","articles":[]},{"title":"Testnet","level":"1.2.4","depth":2,"path":"devportal/testnet.md","ref":"devportal/testnet.md","articles":[{"title":"Connecting to Solana Testnet via a Proxy Server","level":"1.2.4.1","depth":3,"path":"devportal/testnet/connect_to_solana_via_proxy.md","ref":"devportal/testnet/connect_to_solana_via_proxy.md","articles":[]},{"title":"Deploying a Contract via Remix","level":"1.2.4.2","depth":3,"path":"devportal/testnet/deploy_contract_via_remix.md","ref":"devportal/testnet/deploy_contract_via_remix.md","articles":[]}]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"devportal/eth_sol_solution.md","mtime":"2021-07-01T10:02:03.753Z","type":"markdown"},"gitbook":{"version":"3.6.20","time":"2021-07-06T11:49:55.570Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"The Ethereum and Solana capabilities in a single solution","level":"1.2.1","depth":2,"next":{"title":"Overview of the Neon EVM architecture","level":"1.2.2","depth":2,"path":"devportal/neon_evm_arch.md","ref":"devportal/neon_evm_arch.md","articles":[]},"previous":{"title":"DEVPORTAL","level":"1.2","depth":1,"path":"devportal/devportal.md","ref":"devportal/devportal.md","articles":[{"title":"The Ethereum and Solana capabilities in a single solution","level":"1.2.1","depth":2,"path":"devportal/eth_sol_solution.md","ref":"devportal/eth_sol_solution.md","articles":[]},{"title":"Overview of the Neon EVM architecture","level":"1.2.2","depth":2,"path":"devportal/neon_evm_arch.md","ref":"devportal/neon_evm_arch.md","articles":[]},{"title":"Transaction Value Token","level":"1.2.3","depth":2,"path":"devportal/value_token.md","ref":"devportal/value_token.md","articles":[]},{"title":"Installing and Setting up MetaMask","level":"1.2.4","depth":2,"path":"devportal/metamask_setup.md","ref":"devportal/metamask_setup.md","articles":[]},{"title":"Testnet","level":"1.2.5","depth":2,"path":"devportal/testnet.md","ref":"devportal/testnet.md","articles":[{"title":"Connecting to Solana Testnet via a Proxy Server","level":"1.2.5.1","depth":3,"path":"devportal/testnet/connect_to_solana_via_proxy.md","ref":"devportal/testnet/connect_to_solana_via_proxy.md","articles":[]},{"title":"Deploying a Contract via Remix","level":"1.2.5.2","depth":3,"path":"devportal/testnet/deploy_contract_via_remix.md","ref":"devportal/testnet/deploy_contract_via_remix.md","articles":[]}]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"devportal/eth_sol_solution.md","mtime":"2021-07-14T05:12:50.030Z","type":"markdown"},"gitbook":{"version":"3.6.20","time":"2021-07-14T05:36:52.638Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
