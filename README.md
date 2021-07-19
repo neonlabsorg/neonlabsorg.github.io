@@ -18,5 +18,5 @@
 
 ## Community
 * [Ethereum Smart Contracts Scaled by Solana](https://neonlabs.org/) - (Coming in Summer 2021)  
-* [Twittwer](https://twitter.com/neonlabsorg) - Latest product updates and our thoughts on technology development
-* [Discord](https://discord.gg/d9BhxNWTsj) - Chat with other dApps developers in our channel
+* [Twitter](https://twitter.com/neonlabsorg) - Latest product updates and our thoughts on technology development
+* [Discord](https://discord.gg/d9BhxNWTsj) - Chat with the Neon team and other dApps developers in our channel
