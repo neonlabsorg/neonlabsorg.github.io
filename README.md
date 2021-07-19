@@ -15,3 +15,8 @@
 **[🔘 Running Uniswap V2 integration tests](https://github.com/neonlabsorg/neon-evm.docs/wiki/Running-Uniswap-V2-integration-tests)**
 
 **[🔘 Controlling BPF Trace](https://github.com/neonlabsorg/neon-evm.docs/wiki/Controlling-BPF-Trace)**
+
+## Community
+* [Ethereum Smart Contracts Scaled by Solana](https://neonlabs.org/) - (Coming in Summer 2021)  
+* [Twittwer](https://twitter.com/neonlabsorg) - Latest product updates and our thoughts on technology development
+* [Discord](https://discord.gg/d9BhxNWTsj) - Chat with other dApps developers in our channel
