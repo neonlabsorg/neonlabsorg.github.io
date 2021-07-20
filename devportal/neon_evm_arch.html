@@ -508,7 +508,7 @@ The values <em>Mn</em> and number of iterations are set by a Multisig account. T
 <p align="center"> Fig. 3 </p>  
 
 <p>There are 2 user balances: User SPL Balance, whose tokens are traded within Solana, and User ERC20 Balance, whose tokens are traded within the Neon EVM. The ERC20 Wrapper allows a user to transfer his SPL tokens on the ERC20 Balance, exchange them for tokens he needs and withdraw them back. Thus, a user can create a token inside Neon EVM and transfer any number of coins from User SPL Balance to User ERC20 Balance. Then, using EVM contracts, he can handle these coins.</p>
-<h3 id="possible-formation-of-a-queue-of-payments-and-solution-to-this-issue">Possible formation of a queue of payments and solution to this issue</h3>
+<h3 id="possible-formation-of-a-queue-of-payments-and-solution-to-this-issue">Payment queues</h3>
 <p><strong>Issue description</strong><br>Let the ERC20 TKN contract contain only one map for all users with their balances. Then the following conflict situation is possible: if the majority of users pay with ETH tokens, then the same contract will appear inside each <em>N-trx</em>, within which the value will need to be changed. This will cause all <em>N-trxs</em> to line up in one queue and they cannot be executed in parallel.  </p>
 <p>The reason would be that: at the final step, funds would be transferred from the user&apos;s balance to the operator&apos;s balance within one contract.  </p>
 <p><strong>The solution</strong><br>The default token type field along with the balance is added to the Neon account. This field will allow a user to select a type of token for payment using the special option. To transfer SPL tokens from outside to an operator&apos;s account, the ERC20 wrapper is used.  </p>
