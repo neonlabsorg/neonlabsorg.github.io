@@ -3,7 +3,7 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <title>Transaction Value Token</title>
+        <title>Transaction value token</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         
@@ -120,7 +120,7 @@
                 <a href="eth_sol_solution.html">
             
                     
-                    The Ethereum and Solana capabilities in a single solution
+                    Ethereum and Solana capabilities in a single solution
             
                 </a>
             
@@ -133,7 +133,7 @@
                 <a href="neon_evm_arch.html">
             
                     
-                    Overview of the Neon EVM architecture
+                    Overview of Neon EVM architecture
             
                 </a>
             
@@ -146,7 +146,7 @@
                 <a href="value_token.html">
             
                     
-                    Transaction Value Token
+                    Transaction value token
             
                 </a>
             
@@ -159,7 +159,7 @@
                 <a href="metamask_setup.html">
             
                     
-                    Installing and Setting up MetaMask
+                    Installing and setting up MetaMask
             
                 </a>
             
@@ -186,7 +186,7 @@
                 <a href="testnet/connect_to_solana_via_proxy.html">
             
                     
-                    Connecting to Solana Testnet via a Proxy Server
+                    Connecting to Solana Testnet via a proxy server
             
                 </a>
             
@@ -199,7 +199,7 @@
                 <a href="testnet/deploy_contract_via_remix.html">
             
                     
-                    Deploying a Contract via Remix
+                    Deploying a contract via Remix
             
                 </a>
             
@@ -418,7 +418,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Transaction Value Token</a>
+        <a href=".." >Transaction value token</a>
     </h1>
 </div>
 
@@ -433,49 +433,49 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="transaction-value-token-as-an-analogue-of-eth-for-neon-evm-solutions">Transaction Value Token as an Analogue of ETH for Neon EVM Solutions</h1>
+                                <h1 id="transaction-value-token-as-an-analogue-of-eth-for-neon-evm-solutions">Transaction Value token as an analogue of ETH for Neon EVM Solutions</h1>
 <blockquote>
 <p>This section contains introductory information about the <em>Transaction Value token</em> (hereinafter <em>Value token</em>), which is analogous to the ETH token in Neon EVM solutions.  </p>
 </blockquote>
-<p>Using the original <code>ETH</code> token in Neon EVM can create additional difficulties when calculating payment of rewards to transaction participants. Therefore, the <em>Value token</em> is introduced to circulate it inside Neon EVM. This token is analogous to ETH, coming from the Ethereum network through one of the bridges - <a href="https://solana.com/wormhole" target="_blank">WormHole</a> or <a href="https://solana.com/ecosystem/sollet" target="_blank">Sollet</a>. Each of these bridges transfers funds (assets) from ETH-token to SPL-token and back.  </p>
+<p>Using the original <code>ETH</code> token in Neon EVM can create additional difficulties when calculating payment of rewards to transaction participants. Therefore, the <em>Value token</em> is introduced to circulate inside Neon EVM. This token is analogous to ETH, coming from the Ethereum network through one of the bridges: <a href="https://solana.com/wormhole" target="_blank">WormHole</a> or <a href="https://solana.com/ecosystem/sollet" target="_blank">Sollet</a>. Each of these bridges transfers funds (assets) from ETH-token to SPL-token and back.  </p>
 <p>Transfer of funds using bridges is automated, so the converted tokens are directly transferred to Neon EVM. The token conversion scheme is implemented in such a way that it allows transactions to be executed in parallel. Unlike the method of conversion through ERC20 tokens (this method is used in Ethereum, where a map is used with accounts inside a contract), this scheme does not allow transactions to line up in one queue.  </p>
 <p align="center"> <img width="700" src="testnet/images/value_token-1.png"> </p>  
 
 <h2 id="storing-balances-inside-neon-evm">Storing balances inside Neon EVM</h2>
 <p>Inside Neon EVM is the Ethereum account. For each user, the Ethereum account contains two fields for storing two types of coins:</p>
 <ul>
-<li><code>ETH</code> (or <code>USDT</code>) - a coin identifier, which is a <em>Value token</em>;</li>
-<li><code>PAYMENT</code> - a token to pay for transactions. Each user can create the token, with which he will pay with the operator for transactions.</li>
+<li><code>ETH</code> (or <code>USDT</code>): a coin identifier, which is a <em>Value token</em>.</li>
+<li><code>PAYMENT</code>: a token to pay for transactions; each user can create a token, which they will pay with the operator for transactions.</li>
 </ul>
 <p>Part of the Ethereum account code should work with <code>ETH</code> and the other part with <code>PAYMENT</code>.  </p>
 <p>The Solana account is outside Neon EVM and is built as a program address of the Ethereum account. Therefore, only the Ethereum account can access the Solana account. The Solana account contains a balance in SPL tokens. All operations with a <em>Value token</em> are performed through an appeal to the SPL token. This balance is built in a certain fixed way according to the Ethereum account address and the Neon EVM program address. Therefore, only the Solana account can access this balance.  </p>
 <p>Since only a specific Ethereum account can access the Solana account, only this Ethereum account can also access the Solana account balance.  </p>
-<p>When funds are transferring between users, an <code>SPL</code> token is requested, and it transfers funds from one balance to another. Users&apos; balances are stored in their accounts. This placement of balances eliminates the appearance of a queue for processing transactions.</p>
-<p>Neon EVM contains the ERC20 contract. This contract provides work with the balances of Solana&apos;s accounts from inside the Solidity contract.</p>
+<p>When funds are transferred between users, an <code>SPL</code> token is requested, and it transfers funds from one balance to another. Users&apos; balances are stored in their accounts. This placement of balances eliminates the appearance of a queue for processing transactions.</p>
+<p>Neon EVM contains the ERC20 contract. This contract provides work with the balances of Solana&apos;s accounts (the ERC20 contract is called from inside the Solidity contract).</p>
 <h2 id="creating-an-ethereum-account">Creating an Ethereum account</h2>
-<p>As soon as an Ethereum account is created, it is automatically built an <code>SPL</code> token balance for a specific user. This operation can only be done by Neon EVM since only it has authorization to perform an operation from the program-account address (Solana account).  </p>
-<p>After the Ethereum account is created, it becomes possible to send a <em>Value token</em> to the contract to a user&apos;s balance, that is, to process transfers made from the contract code.</p>
+<p>As soon as an Ethereum account is created, an <code>SPL</code> token balance it is automatically built for a specific user. This operation can only be done by Neon EVM since only it has authorization to perform an operation from the program-account address (Solana account).  </p>
+<p>After the Ethereum account is created, it becomes possible to send a <em>Value token</em> to the contract to a user&apos;s balance to process transfers made from the contract code.</p>
 <h2 id="payment-for-execution-of-a-transaction">Payment for execution of a transaction</h2>
-<p>A user has the ability to choose a token to pay to an operator for completing a transaction.
-To do this, the user creates an account in Neon EVM, where he can transfer <code>ETH</code> tokens through a bridge to pay for transactions. Automatically, he gets a balance in the SPL token.  </p>
+<p>A user has the ability to choose the token in which they will pay an operator for completing a transaction.
+To do this, the user creates an account in Neon EVM, where he can transfer <code>ETH</code> tokens through a bridge to pay for transactions. They automatically get a balance in the SPL token.  </p>
 <blockquote>
-<p><em>Transferring <code>ETH</code> (or <code>USDT</code>) tokens through one bridge (for example, through <a href="https://solana.com/wormhole" target="_blank">WormHole</a>) will not be equivalent to transferring the same tokens through another bridge (for example, through <a href="https://solana.com/ecosystem/sollet" target="_blank">Sollet</a>). This means that the user cannot withdraw <code>ETH</code> tokens from his balance through one bridge (<a href="https://solana.com/wormhole" target="_blank">WormHole</a>), if these tokens were transferred to this balance through another bridge (<a href="https://solana.com/ecosystem/sollet" target="_blank">Sollet</a>)</em>.  </p>
+<p><em>Transferring <code>ETH</code> (or <code>USDT</code>) tokens through one bridge (for example, through <a href="https://solana.com/wormhole" target="_blank">WormHole</a>) will not be equivalent to transferring the same tokens through another bridge (for example, through <a href="https://solana.com/ecosystem/sollet" target="_blank">Sollet</a>). This means that the user cannot withdraw <code>ETH</code> tokens from their balance through one bridge (<a href="https://solana.com/wormhole" target="_blank">WormHole</a>), if these tokens were transferred to this balance through another bridge (<a href="https://solana.com/ecosystem/sollet" target="_blank">Sollet</a>)</em>.  </p>
 </blockquote>
-<p>Then the user can make transactions inside Neon EVM. Since a coroutine address is linked to the user&apos;s balance, no one except this coroutine address can use this token.</p>
+<p>Since a coroutine address is linked to the user&apos;s balance, no one except this coroutine address can use this token.</p>
 <h3 id="token-circulation">Token circulation</h3>
-<p>When a user creates a transaction, he specifies a cost of its execution, taking into account the gas price. An operator gets the transaction for execution taking into account the cost specified by the user, as well as a fee. The user&apos;s funds are blocked and in the future they will be paid to an operator.  </p>
-<p>User funds are transferred to the collateral pool in the form of <code>SOL</code> tokens. The amount of tokens depends on setting a multisig account (in the current implementation, this value is hardcoded).  </p>
+<p>When a user creates a transaction, they specify the cost of its execution, taking into account gas price. An operator receives the transaction for execution taking into account the cost specified by the user, as well as a fee. The user&apos;s funds are blocked to be paid to the operator following execution.  </p>
+<p>User funds are transferred to the collateral pool in the form of <code>SOL</code> tokens. The amount of tokens depends on setting up a multisig account (in the current implementation, this value is hardcoded).  </p>
 <p>Depending on the number of operations in a transaction, it can be performed in one or several iterations.</p>
-<h4 id="token-circulation-when-a-transaction-is-executed-in-one-iteration">Token circulation, when a transaction is executed in one iteration</h4>
-<p>Before executing a transaction, an operator transfers funds to the Neon token collateral pool. At the same time, he pays a fee to the validator for checking signatures and pays rent for storing data on the balance of the account.  </p>
-<p>After the transaction is completed, <code>PAYMENT</code> tokens are transferred from the user&apos;s balance to the operator&apos;s balance to cover his costs.</p>
-<h4 id="token-circulation-when-a-transaction-is-executed-in-multiple-iterations">Token circulation, when a transaction is executed in multiple iterations</h4>
-<p>Unlike a non-iterative transaction, the payment of funds to operators is added to motivate them, that is, to interest them in a faster execution of a transaction. This is done so that the accounts involved in the process are not blocked for a long time.  </p>
+<h4 id="token-circulation-for-transaction-execution-in-one-iteration">Token circulation for transaction execution in one iteration</h4>
+<p>Before executing a transaction, an operator transfers funds to the Neon token collateral pool. At the same time, they pay a fee to the validator for checking signatures and pays rent for storing data on the balance of the account.  </p>
+<p>After the transaction is completed, <code>PAYMENT</code> tokens are transferred from the user&apos;s balance to the operator&apos;s balance to cover the costs.</p>
+<h4 id="token-circulation-for-transaction-execution-in-multiple-iterations">Token circulation for transaction execution in multiple iterations</h4>
+<p>Unlike a non-iterative transaction, the payment of funds to operators is added to make them more interested in facilitating faster transaction execution. This is done so that the accounts involved in the process are not blocked for an extended period of time.  </p>
 <p>At the start of an iterative transaction, an operator transfers a fee to the collateral pool, as well as funds (<code>SOL</code> tokens) to a special deposit account. The funds in this account will be paid to the operator who completes the transaction.  The fee will be paid for execution costs over multiple iterations.  </p>
 <p>The priority to receive funds from a deposit is given to the operator who sent the transaction for execution.  </p>
 <p>A transaction contains the name of the operator that is executing it. Also, the transaction indicates the block number when the last activity of this operator was. If fewer blocks have passed than the hardcoded value of the blocks, then this operator can continue the transaction. Only the operator specified in it can cancel the transaction. If more blocks have passed, then any operator can continue the transaction. The right to execute the transaction passes to the operator that intercepts this execution, that is, who is ahead of the others.  </p>
-<p>The right for withdrawing funds from a deposit is granted to the operator who performs the final step. At this step, the user&apos;s funds are transferred to the deposit.  </p>
-<p>If for some reason a transaction is canceled (using the Cancel operation), the blocked funds of a user are returned to him back. The deposit that was frozen is burned. No payout is made to operators. This is done so that operators are interested in completing the transaction.  </p>
+<p>The right to withdraw funds from a deposit is granted to the operator who performs the final step. At this step, the user&apos;s funds are transferred to the deposit.  </p>
+<p>If for some reason a transaction is canceled (using the &quot;Cancel&quot; operation), the blocked funds of a user are returned to them. The deposit that was frozen is burned. No payout is made to operators. This is done so that operators are motivated to complete the transaction.  </p>
 
                                 
                                 </section>
@@ -503,12 +503,12 @@ To do this, the user creates an account in Neon EVM, where he can transfer <code
 
             
                 
-                <a href="neon_evm_arch.html" class="navigation navigation-prev " aria-label="Previous page: Overview of the Neon EVM architecture">
+                <a href="neon_evm_arch.html" class="navigation navigation-prev " aria-label="Previous page: Overview of Neon EVM architecture">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="metamask_setup.html" class="navigation navigation-next " aria-label="Next page: Installing and Setting up MetaMask">
+                <a href="metamask_setup.html" class="navigation navigation-next " aria-label="Next page: Installing and setting up MetaMask">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -519,7 +519,7 @@ To do this, the user creates an account in Neon EVM, where he can transfer <code
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Transaction Value Token","level":"1.2.3","depth":2,"next":{"title":"Installing and Setting up MetaMask","level":"1.2.4","depth":2,"path":"devportal/metamask_setup.md","ref":"devportal/metamask_setup.md","articles":[]},"previous":{"title":"Overview of the Neon EVM architecture","level":"1.2.2","depth":2,"path":"devportal/neon_evm_arch.md","ref":"devportal/neon_evm_arch.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"devportal/value_token.md","mtime":"2021-07-14T10:00:23.137Z","type":"markdown"},"gitbook":{"version":"3.6.20","time":"2021-07-19T15:57:06.630Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Transaction value token","level":"1.2.3","depth":2,"next":{"title":"Installing and setting up MetaMask","level":"1.2.4","depth":2,"path":"devportal/metamask_setup.md","ref":"devportal/metamask_setup.md","articles":[]},"previous":{"title":"Overview of Neon EVM architecture","level":"1.2.2","depth":2,"path":"devportal/neon_evm_arch.md","ref":"devportal/neon_evm_arch.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"devportal/value_token.md","mtime":"2021-07-21T12:25:57.358Z","type":"markdown"},"gitbook":{"version":"3.6.20","time":"2021-07-21T12:46:27.944Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
