@@ -120,7 +120,7 @@
                 <a href="../../devportal/eth_sol_solution.html">
             
                     
-                    The Ethereum and Solana capabilities in a single solution
+                    Ethereum and Solana capabilities in a single solution
             
                 </a>
             
@@ -133,7 +133,7 @@
                 <a href="../../devportal/neon_evm_arch.html">
             
                     
-                    Overview of the Neon EVM architecture
+                    Overview of Neon EVM architecture
             
                 </a>
             
@@ -146,7 +146,7 @@
                 <a href="../../devportal/value_token.html">
             
                     
-                    Transaction Value Token
+                    Transaction value token
             
                 </a>
             
@@ -159,7 +159,7 @@
                 <a href="../../devportal/metamask_setup.html">
             
                     
-                    Installing and Setting up MetaMask
+                    Installing and setting up MetaMask
             
                 </a>
             
@@ -186,7 +186,7 @@
                 <a href="../../devportal/testnet/connect_to_solana_via_proxy.html">
             
                     
-                    Connecting to Solana Testnet via a Proxy Server
+                    Connecting to Solana Testnet via proxy server
             
                 </a>
             
@@ -199,7 +199,7 @@
                 <a href="../../devportal/testnet/deploy_contract_via_remix.html">
             
                     
-                    Deploying a Contract via Remix
+                    Deploying a contract via Remix
             
                 </a>
             
@@ -236,7 +236,7 @@
                 <a href="../foundational_topics.html">
             
                     
-                    Foundational Topics
+                    Foundational topics
             
                 </a>
             
@@ -346,7 +346,7 @@
                 <a href="../how_to_guides.html">
             
                     
-                    How To Guides
+                    How to guides
             
                 </a>
             
@@ -360,7 +360,7 @@
                 <a href="../how_to_guides/deploy_contract.html">
             
                     
-                    How To Deploy An Ethereum Contract
+                    How to deploy an Ethereum contract
             
                 </a>
             
@@ -438,42 +438,42 @@
 <h2 id="account-types">Account types</h2>
 <p>Ethereum has two account types:</p>
 <ul>
-<li><strong>Externally-owned</strong> – controlled by anyone with the private keys</li>
-<li><strong>Contract</strong> – a smart contract deployed to the network, controlled by code</li>
+<li><strong>Externally-owned</strong> – controlled by anyone with the private keys.</li>
+<li><strong>Contract</strong> – a smart contract deployed to the network, controlled by code.</li>
 </ul>
 <h3 id="key-differences">Key differences</h3>
 <p><strong>Externally-owned</strong></p>
 <ul>
-<li>Creating an account costs nothing</li>
-<li>Can initiate transactions</li>
-<li>Transactions between externally-owned accounts can only be ETH transfers  </li>
+<li>Creating an account costs nothing.</li>
+<li>Can initiate transactions.</li>
+<li>Transactions between externally-owned accounts can only be ETH transfers.  </li>
 </ul>
 <p><strong>Contract</strong></p>
 <ul>
-<li>Creating an account has a cost because you&apos;re using network storage</li>
-<li>Can only send transactions in response to receiving a transaction</li>
-<li>Transactions from an external account to a contract account can trigger code which can execute many different actions, such as transferring tokens or even creating a new contract</li>
+<li>Creating an account has a cost because you&apos;re using network storage.</li>
+<li>Can only send transactions in response to receiving a transaction.</li>
+<li>Transactions from an external account to a contract account can trigger code which can execute many different actions, such as transferring tokens or even creating a new contract.</li>
 </ul>
 <h2 id="an-account-examined">An account examined</h2>
 <p>Ethereum accounts have four fields:</p>
 <ul>
-<li><strong>nonce</strong> – a counter that indicates the number of transactions sent from the account. </li>
-<li><strong>balance</strong> – the number of wei owned by this address. Wei is a denomination of ETH and there are 1e+18 wei per ETH.</li>
-<li><strong>codeHash</strong> – this hash refers to the code of an account on the Ethereum virtual machine (EVM). This EVM code cannot be changed unlike the other account fields. For externally owned accounts, the codeHash field is the hash of an empty string.</li>
-<li><strong>storageRoot</strong> – it is known as a storage hash. A 256-bit hash of the root node of a Merkle Patricia trie that encodes the storage contents of the account (a mapping between 256-bit integer values), encoded into the trie as a mapping from the Keccak 256-bit hash of the 256-bit integer keys to the RLP-encoded 256-bit integer values. This trie encodes the hash of the storage contents of this account, and is empty by default.</li>
+<li><strong>Nonce</strong> – a counter that indicates the number of transactions sent from the account. </li>
+<li><strong>Balance</strong> – number of wei owned by this address. Wei is a denomination of ETH and there are 1e+18 wei per ETH.</li>
+<li><strong>CodeHash</strong> – refers to the code of an account on the Ethereum virtual machine (EVM). This EVM code cannot be changed unlike the other account fields. For externally owned accounts, the codeHash field is the hash of an empty string.</li>
+<li><strong>StorageRoot</strong> – known as a storage hash. A 256-bit hash of the root node of a Merkle Patricia trie that encodes the storage contents of the account (a mapping between 256-bit integer values), encoded into the trie as a mapping from the Keccak 256-bit hash of the 256-bit integer keys to the RLP-encoded 256-bit integer values. This trie encodes the hash of the storage contents of this account, and is empty by default.</li>
 </ul>
 <h2 id="externally-owned-accounts">Externally-owned accounts</h2>
 <p>An account is made up of a cryptographic pair of keys: public and private. They help prove that a transaction was  signed by the sender and prevent forgeries. Your private key is what you use to sign transactions, so it grants you custody over the funds associated with your account. You never really hold cryptocurrency, you hold private keys – the funds are always on Ethereum&apos;s ledger.</p>
 <h2 id="account-creation">Account creation</h2>
-<p>When you have to create an account most libraries will generate you a random private key.<br>A private key is made up of 64 hex characters and can be encrypted with a password.  </p>
+<p>When you have to create an account most libraries will generate a random private key for you.<br>A private key is made up of 64 hex characters and can be encrypted with a password.  </p>
 <p>Example:<br><code>ffffffffffffffffffffffffffffffff48a03bbfd25e8cd036415febaaedce6a</code>  </p>
 <p>The public key is generated from the private key using the <a href="https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm" target="_blank">Elliptic Curve Digital Signature Algorithm</a>. To get a public address for your account, you need to add <code>0x</code> before the last 20 bytes of the public key.</p>
 <h2 id="contract-accounts">Contract accounts</h2>
 <p>Contract accounts have a 42 character hexadecimal address:  </p>
 <p>Example:<br><code>0x02042f8cf97ae237070f9587f8e7a266dbead5de</code>  </p>
-<p>The contract address is given when a contract is deployed to the Ethereum Blockchain. The address comes from the creator&apos;s address and the number of transactions sent from that address (the <code>nonce</code>)  </p>
+<p>The contract address is given when a contract is deployed to the Ethereum blockchain. The address comes from the creator&apos;s address and the number of transactions sent from that address (<code>nonce</code>)  </p>
 <blockquote>
-<p><strong>Note</strong><br>An account is not a wallet. A wallet is the keypair associated with a user-owned account, which allow a user to make transactions from or manage the account.</p>
+<p><strong>Note</strong><br>An account is not a wallet. A wallet is the keypair associated with a user-owned account, which allows a user to make transactions from or manage the account.</p>
 <p><strong>More details</strong><br><a href="https://ethereum.org/en/developers/docs/accounts/" target="_blank">ETHEREUM ACCOUNTS</a></p>
 </blockquote>
 
@@ -519,7 +519,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Account","level":"1.3.1.2","depth":3,"next":{"title":"Transaction","level":"1.3.1.3","depth":3,"path":"software_manuals/foundational_topics/transaction.md","ref":"software_manuals/foundational_topics/transaction.md","articles":[]},"previous":{"title":"WEB3","level":"1.3.1.1","depth":3,"path":"software_manuals/foundational_topics/web3.md","ref":"software_manuals/foundational_topics/web3.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"software_manuals/foundational_topics/account.md","mtime":"2021-06-16T09:38:34.781Z","type":"markdown"},"gitbook":{"version":"3.6.20","time":"2021-07-19T15:57:06.630Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Account","level":"1.3.1.2","depth":3,"next":{"title":"Transaction","level":"1.3.1.3","depth":3,"path":"software_manuals/foundational_topics/transaction.md","ref":"software_manuals/foundational_topics/transaction.md","articles":[]},"previous":{"title":"WEB3","level":"1.3.1.1","depth":3,"path":"software_manuals/foundational_topics/web3.md","ref":"software_manuals/foundational_topics/web3.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"software_manuals/foundational_topics/account.md","mtime":"2021-07-22T03:19:50.120Z","type":"markdown"},"gitbook":{"version":"3.6.20","time":"2021-07-22T05:10:26.183Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -571,6 +571,10 @@
     </script>
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
     
         
         <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
