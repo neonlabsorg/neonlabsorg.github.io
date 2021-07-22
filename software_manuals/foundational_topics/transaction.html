@@ -120,7 +120,7 @@
                 <a href="../../devportal/eth_sol_solution.html">
             
                     
-                    The Ethereum and Solana capabilities in a single solution
+                    Ethereum and Solana capabilities in a single solution
             
                 </a>
             
@@ -133,7 +133,7 @@
                 <a href="../../devportal/neon_evm_arch.html">
             
                     
-                    Overview of the Neon EVM architecture
+                    Overview of Neon EVM architecture
             
                 </a>
             
@@ -146,7 +146,7 @@
                 <a href="../../devportal/value_token.html">
             
                     
-                    Transaction Value Token
+                    Transaction value token
             
                 </a>
             
@@ -159,7 +159,7 @@
                 <a href="../../devportal/metamask_setup.html">
             
                     
-                    Installing and Setting up MetaMask
+                    Installing and setting up MetaMask
             
                 </a>
             
@@ -186,7 +186,7 @@
                 <a href="../../devportal/testnet/connect_to_solana_via_proxy.html">
             
                     
-                    Connecting to Solana Testnet via a Proxy Server
+                    Connecting to Solana Testnet via proxy server
             
                 </a>
             
@@ -199,7 +199,7 @@
                 <a href="../../devportal/testnet/deploy_contract_via_remix.html">
             
                     
-                    Deploying a Contract via Remix
+                    Deploying a contract via Remix
             
                 </a>
             
@@ -346,7 +346,7 @@
                 <a href="../how_to_guides.html">
             
                     
-                    How To Guides
+                    How to guides
             
                 </a>
             
@@ -360,7 +360,7 @@
                 <a href="../how_to_guides/deploy_contract.html">
             
                     
-                    How To Deploy An Ethereum Contract
+                    How to deploy an Ethereum contract
             
                 </a>
             
@@ -433,23 +433,23 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="an-ethereum-transaction">An Ethereum Transaction</h1>
-<p>An Ethereum transaction is a cryptographically signed instruction from an account. The account initiates a transaction to update the state of the Ethereum network. Ethereum transaction refers to an action initiated by an external account, i.e. an account managed by a person, not a contract.  </p>
+                                <h1 id="an-ethereum-transaction">An Ethereum transaction</h1>
+<p>An Ethereum transaction is a cryptographically signed instruction from an account. The account initiates a transaction to update the state of the Ethereum network. An Ethereum transaction refers to an action initiated by an external account, i.e. an account managed by a person, not a contract.  </p>
 <p>A transaction, which changes the state of the EVM, needs to be broadcast to the whole network. Any node can broadcast a request for a transaction to be executed on the EVM. Transactions require a fee and must be mined to become valid.</p>
 <h2 id="what-is-in-a-transaction">What is in a transaction?</h2>
-<p>A submitted transaction includes the following information:</p>
+<p>A transaction includes the following information:</p>
 <ul>
-<li><strong>recipient</strong> – the receiving address.</li>
-<li><strong>signature</strong> – the identifier of the sender (sender&apos;s signature with a private key).</li>
-<li><strong>value</strong> – amount of coind to transfer from sender to recipient.</li>
-<li><strong>data</strong> – (optional field) arbitrary data.</li>
-<li><strong>gasLimit</strong> – the maximum amount of gas units that can be consumed by the transaction.</li>
-<li><strong>gasPrice</strong> – the fee the sender pays per unit of gas.</li>
+<li><strong>Recipient</strong> – recipient address.</li>
+<li><strong>Signature</strong> – identifier of the sender (sender&apos;s signature with a private key).</li>
+<li><strong>Value</strong> – amount of coins to transfer from sender to recipient.</li>
+<li><strong>Data</strong> – (optional field) arbitrary data.</li>
+<li><strong>GasLimit</strong> – maximum amount of gas units that can be consumed by the transaction.</li>
+<li><strong>GasPrice</strong> – fee the sender pays per unit of gas.</li>
 </ul>
-<h2 id="what-is-important-to-remember">What is important to remember?</h2>
+<h2 id="note">Note</h2>
 <ul>
-<li>The block that your transaction is placed in can also contain many other transactions. Checking such a block for the validity of transactions may take a more time. Higher priority transactions are served first.</li>
-<li>If the network is busy and miners aren&apos;t able to keep up, they always prioritise transactions with higher GASPRICE because they get to keep the fees.</li>
+<li>The block that your transaction is placed in can also contain many other transactions. Checking such a block for the validity of transactions may take more time. Higher priority transactions are served first.</li>
+<li>If the network is busy and miners aren&apos;t able to keep up, they always prioritise transactions with higher GasPrice because they get to keep the fees.</li>
 <li>A transaction gets a block confirmation number. This is the number of blocks created since the block that this transaction was included in. The higher the number, the greater the certainty that the transaction was processed and recognised by the network. For higher value transactions, more block confirmations may be desired.</li>
 </ul>
 <blockquote>
@@ -498,7 +498,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Transaction","level":"1.3.1.3","depth":3,"next":{"title":"Block","level":"1.3.1.4","depth":3,"path":"software_manuals/foundational_topics/block.md","ref":"software_manuals/foundational_topics/block.md","articles":[]},"previous":{"title":"Account","level":"1.3.1.2","depth":3,"path":"software_manuals/foundational_topics/account.md","ref":"software_manuals/foundational_topics/account.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"software_manuals/foundational_topics/transaction.md","mtime":"2021-06-17T05:26:36.193Z","type":"markdown"},"gitbook":{"version":"3.6.20","time":"2021-07-19T15:57:06.630Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Transaction","level":"1.3.1.3","depth":3,"next":{"title":"Block","level":"1.3.1.4","depth":3,"path":"software_manuals/foundational_topics/block.md","ref":"software_manuals/foundational_topics/block.md","articles":[]},"previous":{"title":"Account","level":"1.3.1.2","depth":3,"path":"software_manuals/foundational_topics/account.md","ref":"software_manuals/foundational_topics/account.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"software_manuals/foundational_topics/transaction.md","mtime":"2021-07-22T03:26:10.481Z","type":"markdown"},"gitbook":{"version":"3.6.20","time":"2021-07-22T05:10:26.183Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -550,6 +550,10 @@
     </script>
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
     
         
         <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
