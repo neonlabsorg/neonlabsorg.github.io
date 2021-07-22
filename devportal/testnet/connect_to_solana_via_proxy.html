@@ -459,7 +459,7 @@
  In the window opened fill in the fields, for example:  </p>
 <ul>
 <li><code>Network Name</code>: &quot;remote proxy - solana testnet&quot;</li>
-<li><code>New RPS URL</code>: https://<remote proxy address>:<remote proxy port>/solana</remote></remote></li>
+<li><code>New RPC URL</code>: <a href="https://proxy.testnet.neonlabs.org/solana" target="_blank">https://proxy.testnet.neonlabs.org/solana</a></li>
 <li><code>Chain ID</code>: 111</li>
 <li><code>Currency Symbol</code>: SYM</li>
 </ul>
@@ -503,7 +503,7 @@ Cannot connect to the Docker daemon at &lt;docker.sock&gt;. Is the docker daemon
 <li>The proxy interacts with Solana through the EVM-loader.</li>
 </ul>
 <p>Upload the docker-compose-test.yml file to your currently directory using the following command:</p>
-<pre><code class="lang-sh">$ wget https://raw.githubusercontent.com/neonlabsorg/proxy-model.py/develop/proxy/docker-compose-test.yml
+<pre><code class="lang-sh">$ wget https://raw.githubusercontent.com/neonlabsorg/proxy-model.py/master/proxy/docker-compose-test.yml
 </code></pre>
 <p>Execute the command:</p>
 <pre><code class="lang-sh">$ sudo REVISION=latest docker-compose -f docker-compose-test.yml up -d
