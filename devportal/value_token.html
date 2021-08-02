@@ -451,9 +451,9 @@
 <p>The Solana account is outside Neon EVM and is built as a program address of the Ethereum account. Therefore, only the Ethereum account can access the Solana account. The Solana account contains a balance in SPL tokens. All operations with a <em>Value token</em> are performed through an appeal to the SPL token. This balance is built in a certain fixed way according to the Ethereum account address and the Neon EVM program address. Therefore, only the Solana account can access this balance.  </p>
 <p>Since only a specific Ethereum account can access the Solana account, only this Ethereum account can also access the Solana account balance.  </p>
 <p>When funds are transferred between users, an <code>SPL</code> token is requested, and it transfers funds from one balance to another. Users&apos; balances are stored in their accounts. This placement of balances eliminates the appearance of a queue for processing transactions.</p>
-<p>Neon EVM contains the ERC20 contract. This contract provides work with the balances of Solana&apos;s accounts (the ERC20 contract is called from inside the Solidity contract).</p>
+<p>Neon EVM contains the ERC20 contract. This contract works with the balances of Solana&apos;s accounts (the ERC20 contract is called from inside the Solidity contract).</p>
 <h2 id="creating-an-ethereum-account">Creating an Ethereum account</h2>
-<p>As soon as an Ethereum account is created, an <code>SPL</code> token balance it is automatically built for a specific user. This operation can only be done by Neon EVM since only it has authorization to perform an operation from the program-account address (Solana account).  </p>
+<p>As soon as an Ethereum account is created, an <code>SPL</code> token balance is automatically built for a specific user. This operation can only be done by Neon EVM since only it has authorization to perform an operation from the program-account address (Solana account).  </p>
 <p>After the Ethereum account is created, it becomes possible to send a <em>Value token</em> to the contract to a user&apos;s balance to process transfers made from the contract code.</p>
 <h2 id="payment-for-execution-of-a-transaction">Payment for execution of a transaction</h2>
 <p>A user has the ability to choose the token in which they will pay an operator for completing a transaction.
@@ -464,7 +464,7 @@ To do this, the user creates an account in Neon EVM, where he can transfer <code
 <p>Since a coroutine address is linked to the user&apos;s balance, no one except this coroutine address can use this token.</p>
 <h3 id="token-circulation">Token circulation</h3>
 <p>When a user creates a transaction, they specify the cost of its execution, taking into account gas price. An operator receives the transaction for execution taking into account the cost specified by the user, as well as a fee. The user&apos;s funds are blocked to be paid to the operator following execution.  </p>
-<p>User funds are transferred to the collateral pool in the form of <code>SOL</code> tokens. The amount of tokens depends on setting up a multisig account (in the current implementation, this value is hardcoded).  </p>
+<p>User funds are transferred to the collateral pool in the form of <code>SOL</code> tokens. The amount of tokens needed depends on setting up a multisig account (in the current implementation, this value is hardcoded).  </p>
 <p>Depending on the number of operations in a transaction, it can be performed in one or several iterations.</p>
 <h4 id="token-circulation-for-transaction-execution-in-one-iteration">Token circulation for transaction execution in one iteration</h4>
 <p>Before executing a transaction, an operator transfers funds to the Neon token collateral pool. At the same time, they pay a fee to the validator for checking signatures and pays rent for storing data on the balance of the account.  </p>
@@ -519,7 +519,7 @@ To do this, the user creates an account in Neon EVM, where he can transfer <code
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Transaction value token","level":"1.2.3","depth":2,"next":{"title":"Installing and setting up MetaMask","level":"1.2.4","depth":2,"path":"devportal/metamask_setup.md","ref":"devportal/metamask_setup.md","articles":[]},"previous":{"title":"Overview of Neon EVM architecture","level":"1.2.2","depth":2,"path":"devportal/neon_evm_arch.md","ref":"devportal/neon_evm_arch.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"devportal/value_token.md","mtime":"2021-07-21T12:25:57.358Z","type":"markdown"},"gitbook":{"version":"3.6.20","time":"2021-07-22T07:54:32.596Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Transaction value token","level":"1.2.3","depth":2,"next":{"title":"Installing and setting up MetaMask","level":"1.2.4","depth":2,"path":"devportal/metamask_setup.md","ref":"devportal/metamask_setup.md","articles":[]},"previous":{"title":"Overview of Neon EVM architecture","level":"1.2.2","depth":2,"path":"devportal/neon_evm_arch.md","ref":"devportal/neon_evm_arch.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"devportal/value_token.md","mtime":"2021-08-02T05:37:43.598Z","type":"markdown"},"gitbook":{"version":"3.6.20","time":"2021-08-02T07:36:42.177Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -571,6 +571,10 @@ To do this, the user creates an account in Neon EVM, where he can transfer <code
     </script>
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
