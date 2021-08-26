@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://doc.neonlabs.org/blog</id>
-    <title>Welcome Blog</title>
+    <title>Neon EVM Docs Blog</title>
     <updated>2019-05-30T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://doc.neonlabs.org/blog"/>
-    <subtitle>Welcome Blog</subtitle>
+    <subtitle>Neon EVM Docs Blog</subtitle>
     <icon>https://doc.neonlabs.org/img/fav_192.png</icon>
     <entry>
         <title type="html"><![CDATA[Welcome]]></title>
